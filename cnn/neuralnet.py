@@ -76,6 +76,8 @@ class NeuralNet:
         """
 
         epsilon = 10 ** (-1 * 5)
+        learnable_layers = 0
+        avg_error = 0
 
         A = self.forward(X)
         self.backward(A, y)
@@ -178,7 +180,11 @@ class NeuralNet:
                 dtheta = np.array(dtheta)
 
                 error = np.linalg.norm(dtheta_approx - dtheta) / (np.linalg.norm(dtheta_approx) + np.linalg.norm(dtheta))
+                avg_error += error
+                learnable_layers += 1
 
-                print(f"{type(layer).__name__}: {error}")
+                print(f"{type(layer).__name__} Relative Error: {error}")
+
+        print(f"Average Relative Error : {avg_error / learnable_layers}")
 
 
