@@ -1,0 +1,11 @@
+pyproject.toml
+cnn/__init__.py
+cnn/layers.py
+cnn/naive_cnn.py
+cnn/neuralnet.py
+cnn/optimizer.py
+cnn/results.py
+cnn.egg-info/PKG-INFO
+cnn.egg-info/SOURCES.txt
+cnn.egg-info/dependency_links.txt
+cnn.egg-info/top_level.txt
