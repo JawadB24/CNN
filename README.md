@@ -1,38 +1,51 @@
-Deep Learning CNN Framework
-A convolutional neural network framework built entirely from scratch in Python using NumPy. The project implements the core components of a modern CNN—including forward propagation, 
-backpropagation, optimization, normalization, and vectorized computation—without relying on deep learning libraries such as PyTorch or TensorFlow.
+# Deep Learning CNN Framework
 
-The framework was designed with a focus on understanding the underlying mathematics and computational mechanics of deep learning, while also demonstrating how vectorization can dramatically improve performance.
+A convolutional neural network framework built entirely from scratch in **Python using NumPy**, with manually implemented forward propagation, backpropagation, optimization, normalization, and vectorized operations.
 
-Features
+This project focuses on understanding the underlying mathematics and computational mechanics of CNNs without relying on high-level deep learning frameworks such as PyTorch or TensorFlow.
 
-Object-oriented CNN architecture built entirely with NumPy
+## Features
 
-Manually derived forward and backward propagation
+- **Convolutional Layer**
+- **Batch Normalization**
+- **ReLU Activation**
+- **Max Pooling**
+- **Dense / Fully Connected Layer**
+- **Softmax Output Layer**
+- **Adam Optimizer**
+- **Manual Forward & Backward Propagation**
+- **Vectorized Convolution using `im2col` / `col2im`**
+- **Vectorized Max Pooling**
+- **Two-Sided Numerical Gradient Checking**
+- **Naive vs. Vectorized Performance Benchmarking**
+- **End-to-End CIFAR-10 Training**
 
-Convolutional layers with vectorized im2col / col2im implementations
+---
 
-Vectorized max pooling
+## Architecture
 
-Batch normalization
+The framework supports composing layers into a CNN pipeline such as:
 
-ReLU activation
-
-Fully connected (dense) layers
-
-Softmax output layer
-
-Adam optimizer
-
-Numerical gradient checking
-
-Naive vs. vectorized performance benchmarking
-
-End-to-end training on a subset of CIFAR-10
-
-Architecture
-The framework currently supports the following layers:
-Input -> Convolution -> Batch Normalization -> ReLU -> Max Pooling -> Flatten -> Dense -> Softmax -> Class Probabilities
-
-Each layer implements its own forward and backward passes, allowing networks to be composed and trained using a consistent object-oriented interface.
-
+```text
+Input
+  │
+  ▼
+Convolution
+  │
+  ▼
+Batch Normalization
+  │
+  ▼
+ReLU
+  │
+  ▼
+Max Pooling
+  │
+  ▼
+Dense
+  │
+  ▼
+Softmax
+  │
+  ▼
+Class Probabilities
